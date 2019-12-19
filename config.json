@@ -1,0 +1,12 @@
+{
+  "server_start": "Server started",
+  "status_success": 200,
+  "status_not_found" : 404,
+  "status_forbidden" : 403,
+  "status_unauthorized": 401,
+  "status_bad_request" : 400,
+  "status_internal_error" : 500,
+  "secretkey" : "b08a4fc7c273b9e8b15587fd9cbf1908",
+  "JWT_EXPIRATION_TIME" : "1d",
+  "JWT_EXPIRATION_KEEP_LOGIN_TIME" : "14d"
+}

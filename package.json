@@ -1,0 +1,25 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --require dotenv/config app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.4",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.3",
+    "express-fileupload": "^1.0.0-alpha.1",
+    "jsonwebtoken": "^8.3.0",
+    "md5": "^2.2.1",
+    "mysql2": "^2.0.2",
+    "nodemon": "^1.18.4",
+    "sequelize": "^5.11.0",
+    "validator": "^12.1.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "devDependencies": {}
+}
