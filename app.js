@@ -16,7 +16,7 @@ app.use(commonUtility.checkPermission)
 
 app.post('/api/login', userController.login)
 app.post('/api/users', userController.createUser)
-// app.patch('/api/users', [validateUserToken, userController.editUser])
+app.patch('/api/users', [validateUserToken, userController.editUser])
 app.get('/api/users', [validateUserToken, userController.getUsers])
 app.get('/api/users/:user_id', [validateUserToken, userController.getUserById])
 

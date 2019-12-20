@@ -26,6 +26,16 @@ const userController = {
     pipeline.emit('next')
   },
 
+  editUser: (req) => {
+    const pipeline = req.pipeline
+
+    pipeline.add('editUser', () => {
+      userService.editUser(req.headers.authorization, req.body, pipeline)
+    })
+
+    pipeline.emit('next')
+  },
+
   getUsers: (req) => {
     const pipeline = req.pipeline
 

@@ -16,7 +16,7 @@ const userService = {
         raw: true
       })
       if (!user) {
-        commonUtility.handleNotFound(pipeline)
+        commonUtility.handleUnauthorized(pipeline)
         return
       }
       pipeline.output.user = user
@@ -69,6 +69,43 @@ const userService = {
         status: 'success',
         response: {
           user: user
+        }
+      }
+      pipeline.output.status = configEnv.status_success
+      pipeline.output.content = res
+      pipeline.emit('next')
+    } catch (e) {
+      commonUtility.handleInternalServerError(pipeline)
+    }
+  },
+
+  editUser: async (token, data, pipeline) => {
+    try {
+      const decoded = jwt.verify(token, configEnv.secretkey)
+      const userId = decoded.id
+      if (!data.name || (data.password && data.password !== data.password_confirm)) {
+        commonUtility.handleBadRequest(pipeline)
+        return
+      }
+      const dataUpdated = {
+        name: data.name
+      }
+      if (data.password) {
+        dataUpdated.password = md5(data.password)
+      }
+      await userModel.update(dataUpdated, {where: { id: userId }})
+      const userRes = await userModel.findOne({
+        where: {
+          id: userId,
+          is_deleted: 0
+        },
+        raw: true
+      })
+      delete userRes.password
+      const res = {
+        status: 'success',
+        response: {
+          user: userRes
         }
       }
       pipeline.output.status = configEnv.status_success
