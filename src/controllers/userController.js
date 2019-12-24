@@ -1,5 +1,4 @@
 const Pipeline = require('../helper/pipeline')
-const connection = require('../helper/mysql_sequelize')
 const userService = require('../services/userService')
 const userController = {
   login: (req, res) => {

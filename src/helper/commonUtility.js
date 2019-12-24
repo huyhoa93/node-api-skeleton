@@ -86,6 +86,7 @@ const commonUtility = {
         return
       }
       pipeline.input['user'] = user
+      // eslint-disable-next-line require-atomic-updates
       req.pipeline = pipeline
       next()
     } catch (e) {
@@ -95,16 +96,16 @@ const commonUtility = {
 
   checkPermission: async function(req, res, next) {
     // Not have permission
-      /*
-        const rs = {
-          status: 'fail',
-          response: {
-            message: 'Permission Denied'
-          }
+    /*
+      const rs = {
+        status: 'fail',
+        response: {
+          message: 'Permission Denied'
         }
-        res.status(configEnv.status_forbidden).json(rs).end()
-        return
-      */
+      }
+      res.status(configEnv.status_forbidden).json(rs).end()
+      return
+    */
       
     // Have permission
     next()
