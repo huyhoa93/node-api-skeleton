@@ -6,7 +6,7 @@
   "status_unauthorized": 401,
   "status_bad_request" : 400,
   "status_internal_error" : 500,
-  "secretkey" : "b08a4fc7c273b9e8b15587fd9cbf1908",
+  "secretkey" : "huyhoa93/node-api-skeleton",
   "JWT_EXPIRATION_TIME" : "1d",
   "JWT_EXPIRATION_KEEP_LOGIN_TIME" : "14d"
 }
