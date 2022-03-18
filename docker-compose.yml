@@ -1,0 +1,9 @@
+version: '2'
+services:
+  api:
+    build: .
+    volumes:
+      - .:/home/node/app/
+      - /home/node/app/node_modules
+    ports:
+      - "8080:8080"

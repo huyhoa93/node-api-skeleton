@@ -26,5 +26,12 @@ module.exports = {
     "arrow-spacing": ["error", { "before": true, "after": true }],
     "keyword-spacing": ["error"],
     "key-spacing": ["error", { "beforeColon": false }]
-  }
+  },
+  "globals": {
+    "localStorage": true,
+    "document": true,
+    "gapi": true,
+    "window": true,
+    "location": true,
+  },
 }
